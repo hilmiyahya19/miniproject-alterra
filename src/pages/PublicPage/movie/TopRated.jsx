@@ -22,7 +22,7 @@ function TopRated () {
     return (
         <>
             <Hero/>
-            <Movies title="TopRated Movies" />
+            <Movies title="Top Rated Movies" />
         </>
 
     );

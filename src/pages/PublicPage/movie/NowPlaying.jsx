@@ -22,7 +22,7 @@ function NowPlaying () {
     return (
         <>
             <Hero/>
-            <Movies title="NowPlaying Movies" />
+            <Movies title="Now Playing Movies" />
         </>
 
     );

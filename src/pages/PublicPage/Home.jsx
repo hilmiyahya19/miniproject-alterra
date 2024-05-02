@@ -1,10 +1,11 @@
 import Hero from "../../components/Hero/Hero";
+import Movies from "../../components/Movies/Movies"
 
 function Home() {
   return (
     <>
-      <h1 className="text-3xl font-semibold text-center my-5">Ini Halaman Home</h1>
       <Hero/>
+      <Movies title="Latest Movie"/>
     </>
   )
 }

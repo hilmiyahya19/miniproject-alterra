@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import NavItem from './NavItem';
 
 function Navbar() {
@@ -9,6 +9,12 @@ function Navbar() {
 
  const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
+
+  const toggleAvatarDropdown = () => {
+    setOpenAvatarDropdown(!openAvatarDropdown);
   };
 
  return (
@@ -32,7 +38,17 @@ function Navbar() {
                  ) : (
                     <>
                       <NavItem to="/home" currentPath={location.pathname}>Home</NavItem>
-                      <NavItem to="/movie" currentPath={location.pathname}>Movie</NavItem>
+                      <div onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
+                        <span className="cursor-pointer font-semibold">Movie</span>
+                        <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2 px-3`}>
+                        <div className='p-4 flex flex-col text-slate-700'>
+                          <NavLink to="/movie/popular" className="hover:text-blue-600">Popular</NavLink>
+                          <NavLink to="/movie/now-playing" className="hover:text-blue-600">Now Playing</NavLink>
+                          <NavLink to="/movie/upcoming" className="hover:text-blue-600">Upcoming</NavLink>
+                          <NavLink to="/movie/top-rated" className="hover:text-blue-600">Top Rated</NavLink>
+                        </div>
+                      </div>
+                      </div>
                       <NavItem to="/content" currentPath={location.pathname}>Content</NavItem>
                       <NavItem to="/chat" currentPath={location.pathname}>Chat</NavItem>
                       <NavItem to="/about" currentPath={location.pathname}>About</NavItem>
@@ -61,7 +77,17 @@ function Navbar() {
                 ) : (
                  <>
                     <NavItem to="/home" currentPath={location.pathname}>Home</NavItem>
-                    <NavItem to="/movie" currentPath={location.pathname}>Movie</NavItem>
+                    <div onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
+                      <span className="cursor-pointer font-semibold">Movie</span>
+                      <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2`}>
+                        <div className='p-4 flex flex-col text-slate-700'>
+                          <NavLink to="/movie/popular" className="hover:text-blue-600">Popular</NavLink>
+                          <NavLink to="/movie/now-playing" className="hover:text-blue-600">Now Playing</NavLink>
+                          <NavLink to="/movie/upcoming" className="hover:text-blue-600">Upcoming</NavLink>
+                          <NavLink to="/movie/top-rated" className="hover:text-blue-600">Top Rated</NavLink>
+                        </div>
+                      </div>
+                    </div>
                     <NavItem to="/content" currentPath={location.pathname}>Content</NavItem>
                     <NavItem to="/chat" currentPath={location.pathname}>Chat</NavItem>
                     <NavItem to="/about" currentPath={location.pathname}>About</NavItem>
