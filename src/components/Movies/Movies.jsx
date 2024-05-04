@@ -16,7 +16,8 @@ function Movies(props) {
         <MoviesTitle>{title}</MoviesTitle>
         <MovieContainer>
           {movies.map((movie) => {
-            return <Movie key={movie.id} movie={{...movie, id: parseInt(movie.id)}}/>;
+            return <Movie key={movie.id} movie={{...movie, id: parseInt(movie.id)}}/>; 
+            // Memetakan setiap objek movie menjadi komponen Movie, dengan mengubah tipe data properti id menjadi number
           })}
         </MovieContainer>
       </MoviesSection>
