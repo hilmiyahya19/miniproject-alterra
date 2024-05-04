@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHero = styled.div`
-  margin: 5rem auto;
+  margin: 2rem auto;
   padding: 1rem;
 
   section {

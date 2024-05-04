@@ -26,7 +26,8 @@ function Footer() {
         </div>
         {/* Column 2 */}
         <div className="mb-8 md:mb-0">
-          <img src={`/img/fire.png`} alt="MyWebsite" className="mr-2 w-8 md:w-12 lg:w-20 h-8 md:h-12 lg:h-20"/>
+          <img src={`/img/icons8-movie-64.png`} alt="movie" 
+          className="mr-2 w-8 md:w-12 lg:w-20 h-8 md:h-12 lg:h-20"/>
           <h2 className="text-white text-lg mt-2">Movie App</h2>
         </div>
         {/* Column 3 */}
@@ -36,13 +37,11 @@ function Footer() {
           <p className="text-white mb-2">12345</p>
           <p className="text-white mb-2">Telepon: 0812-3456-7890</p>
           <p className="text-white mb-2">Email: hilmiyahya825@gmail.com</p>
-          <section className="">
-            <div className="text-blue-500 font-bold">
-              <Link to="/contact">
-                <button className="btn-primary px-5 py-2 bg-white rounded-md hover:bg-blue-100">Contact</button>
-              </Link>
-            </div>
-          </section>
+          <div className="font-bold text-white">
+            <Link to="/contact">
+              <button className="btn-primary px-5 py-2 bg-blue-900 rounded-md hover:bg-blue-800">Contact</button>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

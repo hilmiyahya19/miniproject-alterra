@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Movie from "../Movie/Movie";
-import styles from "./Movies.module.css";
 import PropTypes from 'prop-types';
+import { Container, MoviesSection, MoviesTitle, MovieContainer } from './Movies.styled'; // Import styled-components
 
 function Movies(props) {
   // Destructing props: state movies
@@ -11,16 +11,16 @@ function Movies(props) {
 
   return (
     <div>
-      <div className={styles.container}>
-        <section className={styles.movies}>
-          <h2 className={styles.movies__title}>{title}</h2>
-          <div className={styles.movie__container}>
-            {movies.map((movie) => {
-              return <Movie key={movie.id} movie={movie} />;
-            })}
-          </div>
-        </section>
-      </div>
+      <Container>
+      <MoviesSection>
+        <MoviesTitle>{title}</MoviesTitle>
+        <MovieContainer>
+          {movies.map((movie) => {
+            return <Movie key={movie.id} movie={{...movie, id: parseInt(movie.id)}}/>;
+          })}
+        </MovieContainer>
+      </MoviesSection>
+    </Container>
     </div>
   );
 }

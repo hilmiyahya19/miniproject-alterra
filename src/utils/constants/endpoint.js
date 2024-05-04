@@ -11,6 +11,7 @@ const ENDPOINTS = {
     RECOM: (id) => `${BASE_URL}/movie/${id}/recommendations?api_key=${API_KEY}`,
     TRENDING : `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`,
     DETAIL : (id) => `${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=videos`,
+    SEARCH_MOVIE : `${BASE_URL}/search/movie?api_key=${API_KEY}`,
 };
 
 export default ENDPOINTS;

@@ -21,7 +21,7 @@ function DetailMovie() {
     
         setMovie(response.data)
     }
-    console.log(movie);
+    // console.log(movie);
     
 
     return(

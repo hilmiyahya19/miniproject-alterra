@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui';
+import flowbite from 'flowbite/plugin';
+
 export default {
   content: [
     "./index.html",
@@ -7,5 +9,8 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [import('daisyui')],
-}
+  plugins: [
+    daisyui,
+    flowbite
+  ]
+};
