@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div>
-      <div className="mx-auto max-w-md p-4 bg-white rounded-lg shadow-lg mt-5 mb-5">
+      <div className="mx-auto max-w-md p-4 bg-white rounded-lg shadow-lg mt-12 mb-12">
       <h1 className="text-3xl font-bold mb-4 text-center">CineBot</h1>
       <p className="text-xl font-bold mb-4 text-center">Your Personal Movie Recommender</p>
       <form onSubmit={handleSubmit}>
