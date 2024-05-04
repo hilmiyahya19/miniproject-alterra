@@ -1,23 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import NavItem from './NavItem';
 
 function Navbar() {
- const location = useLocation();
- const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
- const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
- const toggleMobileMenu = () => {
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpenAvatarDropdown(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
 
   const toggleAvatarDropdown = () => {
     setOpenAvatarDropdown(!openAvatarDropdown);
   };
 
- return (
+  return (
     <>
       <header className="bg-gray-100 shadow-lg">
         <div className="mx-2 sm:mx-5 md:mx-5 lg:mx-5">
@@ -38,7 +51,7 @@ function Navbar() {
                  ) : (
                     <>
                       <NavItem to="/home" currentPath={location.pathname}>Home</NavItem>
-                      <div onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
+                      <div ref={dropdownRef} onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
                         <span className="cursor-pointer font-semibold">Movie</span>
                         <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2 px-3`}>
                         <div className='p-4 flex flex-col text-slate-700'>
@@ -77,7 +90,7 @@ function Navbar() {
                 ) : (
                  <>
                     <NavItem to="/home" currentPath={location.pathname}>Home</NavItem>
-                    <div onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
+                    <div  ref={dropdownRef}onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
                       <span className="cursor-pointer font-semibold">Movie</span>
                       <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2`}>
                         <div className='p-4 flex flex-col text-slate-700'>

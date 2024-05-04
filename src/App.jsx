@@ -23,12 +23,18 @@ import Favorite from "./pages/PrivatePage/Favorite";
 import Detail from "./pages/PublicPage/movie/Detail";
 
 function App() {
+  // Cek apakah pengguna sudah terautentikasi
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
 
   return (
     <>
       <ThemeProvider  theme={theme}>
         <Layout>
           <Routes>
+          {/* Route "/" untuk menampilkan Home atau Dashboard */}
+          <Route path="/" element={
+              isAuthenticated === "true" ? <Dashboard /> : <Home />
+            } />
           {/* Public routes */}
             <Route path="/" element={<PublicRoute />}>
               <Route path="/home" element={<Home />} />
