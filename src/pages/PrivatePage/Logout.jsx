@@ -30,7 +30,7 @@ function Logout() {
       </Button>
       <Modal show={showModal} onClose={handleCloseModal} backdrop={true}>
         <h2 className="text-xl font-semibold mb-4">Apakah anda yakin ingin logout?</h2>
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-evenly mt-4">
           <Button onClick={handleCloseModal} className="mr-4">
             Batal
           </Button>
