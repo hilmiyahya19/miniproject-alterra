@@ -1,4 +1,4 @@
-const data = [
+const dataMovie = [
     {
       id: "tt10872600",
       title: "Spider-Man",
@@ -97,4 +97,4 @@ const data = [
     },
   ];
   
-  export default data;
+  export default dataMovie;
