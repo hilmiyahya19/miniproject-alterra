@@ -26,6 +26,7 @@ function Create() {
         throw error;
       }
       console.log("Content added successfully:", data);
+      alert("data berhasil ditambahkan")
       // Reset the form after successful submission
       setFormData({
         creator:"",

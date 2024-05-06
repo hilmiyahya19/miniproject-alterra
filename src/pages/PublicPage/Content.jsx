@@ -26,9 +26,9 @@ function Content() {
       <div className="grid grid-cols-1 gap-4">
         {content.map((item) => (
           <div key={item.id} className="bg-white shadow-md rounded px-8 py-6">
-            <p>Creator : {item.creator}</p>
-            <p>Title : {item.title}</p>
-            <p>Description : {item.description}</p>
+            <p className="text-indigo-700 text-lg font-semibold">Creator : {item.creator}</p>
+            <p className="text-pink-700 text-lg font-semibold">Title : {item.title}</p>
+            <p className="text-gray-600 text-md">Description : {item.description}</p>
             <div className="pt-2">
               <video className="h-full w-full rounded-lg" controls autoPlay>
                 <source src={item.video} type="video/mp4" />
