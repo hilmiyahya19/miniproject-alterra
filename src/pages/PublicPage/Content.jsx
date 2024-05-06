@@ -26,13 +26,11 @@ function Content() {
       <div className="grid grid-cols-1 gap-4">
         {content.map((item) => (
           <div key={item.id} className="bg-white shadow-md rounded px-8 py-6">
-            <p className="text-lg font-semibold">ID: {item.id}</p>
-            <p>Created At: {item.created_at}</p>
-            <p>Creator: {item.creator}</p>
-            <p>Title: {item.title}</p>
-            <p>Description: {item.description}</p>
-            <div>
-              <video controls className="mt-2" style={{ maxWidth: '100%' }}>
+            <p>Creator : {item.creator}</p>
+            <p>Title : {item.title}</p>
+            <p>Description : {item.description}</p>
+            <div className="pt-2">
+              <video className="h-full w-full rounded-lg" controls autoPlay>
                 <source src={item.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

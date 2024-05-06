@@ -6,13 +6,16 @@ import './index.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import { Provider } from "react-redux";
 import store from "./store";
+import { ThemeProvider } from "@material-tailwind/react";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <ChakraProvider>
-          <App/>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
         </ChakraProvider>
       </BrowserRouter>
     </Provider>

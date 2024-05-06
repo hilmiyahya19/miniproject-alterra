@@ -19,8 +19,9 @@ import About from "./pages/PublicPage/About";
 import Registration from "./pages/PublicPage/Registration";
 import Dashboard from "./pages/PrivatePage/Dashboard";
 import Create from "./pages/PrivatePage/Create";
-import Favorite from "./pages/PrivatePage/Favorite";
 import Detail from "./pages/PublicPage/movie/Detail";
+import Update from "./pages/PrivatePage/Update";
+import Delete from "./pages/PrivatePage/Delete";
 
 function App() {
   // Cek apakah pengguna sudah terautentikasi
@@ -54,7 +55,8 @@ function App() {
             <Route path="/" element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dashboard/>} />
               <Route path="/create" element={<Create/>} />
-              <Route path="/favorite" element={<Favorite/>} />
+              <Route path="/update" element={<Update/>} />
+              <Route path="/delete" element={<Delete/>} />
               <Route path="/logout" element={<Logout/>} />
             </Route>
           {/* Not found */}

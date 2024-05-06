@@ -45,7 +45,8 @@ function Navbar() {
                     <>
                       <NavItem to="/dashboard" currentPath={location.pathname}>Dashboard</NavItem>
                       <NavItem to="/create" currentPath={location.pathname}>Create</NavItem>
-                      <NavItem to="/favorite" currentPath={location.pathname}>Favorite</NavItem>
+                      <NavItem to="/update" currentPath={location.pathname}>Update</NavItem>
+                      <NavItem to="/delete" currentPath={location.pathname}>Delete</NavItem>
                       <NavItem to="/logout" currentPath={location.pathname}>Logout</NavItem> 
                    </>
                  ) : (
@@ -84,7 +85,8 @@ function Navbar() {
                  <>
                     <NavItem to="/dashboard" currentPath={location.pathname}>Dashboard</NavItem>
                     <NavItem to="/create" currentPath={location.pathname}>Create</NavItem>
-                    <NavItem to="/favorite" currentPath={location.pathname}>Favorite</NavItem>
+                    <NavItem to="/update" currentPath={location.pathname}>Update</NavItem>
+                    <NavItem to="/delete" currentPath={location.pathname}>Delete</NavItem>
                     <NavItem to="/logout" currentPath={location.pathname}>Logout</NavItem> 
                  </>
                 ) : (
