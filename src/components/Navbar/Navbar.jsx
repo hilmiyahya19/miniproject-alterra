@@ -44,9 +44,16 @@ function Navbar() {
                  {isAuthenticated ? (
                     <>
                       <NavItem to="/dashboard" currentPath={location.pathname}>Dashboard</NavItem>
-                      <NavItem to="/create" currentPath={location.pathname}>Create</NavItem>
-                      <NavItem to="/update" currentPath={location.pathname}>Update</NavItem>
-                      <NavItem to="/delete" currentPath={location.pathname}>Delete</NavItem>
+                      <div ref={dropdownRef} onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
+                        <span className="cursor-pointer font-semibold">Manage</span>
+                        <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2 px-3`}>
+                        <div className='p-4 flex flex-col text-slate-700'>
+                          <NavLink to="/manage/create" className="hover:text-blue-600">Create</NavLink>
+                          <NavLink to="/manage/update" className="hover:text-blue-600">Update</NavLink>
+                          <NavLink to="/manage/delete" className="hover:text-blue-600">Delete</NavLink>
+                        </div>
+                      </div>
+                      </div>
                       <NavItem to="/logout" currentPath={location.pathname}>Logout</NavItem> 
                    </>
                  ) : (
@@ -84,9 +91,16 @@ function Navbar() {
                 {isAuthenticated ? (
                  <>
                     <NavItem to="/dashboard" currentPath={location.pathname}>Dashboard</NavItem>
-                    <NavItem to="/create" currentPath={location.pathname}>Create</NavItem>
-                    <NavItem to="/update" currentPath={location.pathname}>Update</NavItem>
-                    <NavItem to="/delete" currentPath={location.pathname}>Delete</NavItem>
+                    <div ref={dropdownRef} onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
+                      <span className="cursor-pointer font-semibold">Manage</span>
+                      <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2 px-3`}>
+                      <div className='p-4 flex flex-col text-slate-700'>
+                        <NavLink to="/manage/create" className="hover:text-blue-600">Create</NavLink>
+                        <NavLink to="/manage/update" className="hover:text-blue-600">Update</NavLink>
+                        <NavLink to="/manage/delete" className="hover:text-blue-600">Delete</NavLink>
+                      </div>
+                      </div>
+                    </div>
                     <NavItem to="/logout" currentPath={location.pathname}>Logout</NavItem> 
                  </>
                 ) : (
@@ -95,12 +109,12 @@ function Navbar() {
                     <div  ref={dropdownRef}onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
                       <span className="cursor-pointer font-semibold">Movie</span>
                       <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-200 rounded shadow-lg mt-2 space-y-2`}>
-                        <div className='p-4 flex flex-col text-slate-700'>
-                          <NavLink to="/movie/popular" className="hover:text-blue-600">Popular</NavLink>
-                          <NavLink to="/movie/now-playing" className="hover:text-blue-600">Now Playing</NavLink>
-                          <NavLink to="/movie/upcoming" className="hover:text-blue-600">Upcoming</NavLink>
-                          <NavLink to="/movie/top-rated" className="hover:text-blue-600">Top Rated</NavLink>
-                        </div>
+                      <div className='p-4 flex flex-col text-slate-700'>
+                        <NavLink to="/movie/popular" className="hover:text-blue-600">Popular</NavLink>
+                        <NavLink to="/movie/now-playing" className="hover:text-blue-600">Now Playing</NavLink>
+                        <NavLink to="/movie/upcoming" className="hover:text-blue-600">Upcoming</NavLink>
+                        <NavLink to="/movie/top-rated" className="hover:text-blue-600">Top Rated</NavLink>
+                      </div>
                       </div>
                     </div>
                     <NavItem to="/content" currentPath={location.pathname}>Content</NavItem>
@@ -119,4 +133,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

@@ -70,10 +70,10 @@ function Update() {
       <div className="grid grid-cols-1 gap-4">
         {content.map((item) => (
           <div key={item.id} className="bg-white shadow-md rounded px-8 py-6">
-            <p>Creator : {item.creator}</p>
-            <p>Title : {item.title}</p>
-            <p>Description : {item.description}</p>
-            <p>Video URL : {item.video}</p>
+            <p><span className="font-semibold">Creator</span> : {item.creator}</p>
+            <p><span className="font-semibold">Title</span> : {item.title}</p>
+            <p><span className="font-semibold">Description</span> : {item.description}</p>
+            <p><span className="font-semibold">Video URL</span> : {item.video}</p>
             <div>
               <button onClick={() => handleUpdateClick(item)} className="bg-yellow-300 text-white py-2 px-4 rounded-md hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400 mt-2">Update</button>
             </div>

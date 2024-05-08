@@ -8,21 +8,21 @@ import Login from './pages/PublicPage/Login';
 import Logout from './pages/PrivatePage/Logout';
 import NotFound from './pages/NotFound/NotFound';
 import Home from "./pages/PublicPage/Home";
-import Movie from "./pages/PublicPage/movie";
 import Popular from "./pages/PublicPage/movie/Popular";
 import NowPlaying from "./pages/PublicPage/movie/NowPlaying";
 import Upcoming from "./pages/PublicPage/movie/Upcoming";
 import TopRated from "./pages/PublicPage/movie/TopRated";
+import Detail from "./pages/PublicPage/movie/Detail";
 import Content from "./pages/PublicPage/Content";
 import Chat from "./pages/PublicPage/Chat";
 import About from "./pages/PublicPage/About";
 import Registration from "./pages/PublicPage/Registration";
 import Dashboard from "./pages/PrivatePage/Dashboard";
-import Create from "./pages/PrivatePage/Create";
-import Detail from "./pages/PublicPage/movie/Detail";
-import Update from "./pages/PrivatePage/Update";
-import Delete from "./pages/PrivatePage/Delete";
-import UploadVideo from "./pages/PrivatePage/UploadVideo";
+import Create from "./pages/PrivatePage/manage/Create";
+import Update from "./pages/PrivatePage/manage/Update";
+import Delete from "./pages/PrivatePage/manage/Delete";
+import UploadVideo from "./pages/PrivatePage/upload/UploadVideo";
+import UploadImage from "./pages/PrivatePage/upload/UploadImage";
 
 function App() {
   // Cek apakah pengguna sudah terautentikasi
@@ -40,7 +40,6 @@ function App() {
           {/* Public routes */}
             <Route path="/" element={<PublicRoute />}>
               <Route path="/home" element={<Home />} />
-              <Route path="/movie/" element={<Movie />} />
               <Route path="/movie/popular" element={<Popular />} />
               <Route path="/movie/now-playing" element={<NowPlaying />} />
               <Route path="/movie/upcoming" element={<Upcoming />} />
@@ -55,11 +54,12 @@ function App() {
           {/* Private routes */}
             <Route path="/" element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dashboard/>} />
-              <Route path="/create" element={<Create/>} />
-              <Route path="/update" element={<Update/>} />
-              <Route path="/delete" element={<Delete/>} />
+              <Route path="manage/create" element={<Create/>} />
+              <Route path="manage/update" element={<Update/>} />
+              <Route path="manage/delete" element={<Delete/>} />
               <Route path="/logout" element={<Logout/>} />
               <Route path="/upload-video" element={<UploadVideo/>} />
+              <Route path="/upload-image" element={<UploadImage/>} />
             </Route>
           {/* Not found */}
           <Route path="*" element={<NotFound />} />

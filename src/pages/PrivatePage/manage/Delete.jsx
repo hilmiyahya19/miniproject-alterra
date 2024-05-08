@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-import Modal from "../../components/ui/Modal/Modal";
+import Modal from "../../../components/ui/Modal/Modal";
 
 function Delete() {
   const [content, setContent] = useState([]);
@@ -51,10 +51,10 @@ function Delete() {
       <div className="grid grid-cols-1 gap-4">
         {content.map((item) => (
           <div key={item.id} className="bg-white shadow-md rounded px-8 py-6">
-            <p>Creator : {item.creator}</p>
-            <p>Title : {item.title}</p>
-            <p>Description : {item.description}</p>
-            <p>Video URL : {item.video}</p>
+            <p><span className="font-semibold">Creator</span> : {item.creator}</p>
+            <p><span className="font-semibold">Title</span> : {item.title}</p>
+            <p><span className="font-semibold">Description</span> : {item.description}</p>
+            <p><span className="font-semibold">Video URL</span> : {item.video}</p>
             <div>
               <button onClick={() => handleDeleteClick(item)} className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 mt-2">Delete</button>
             </div>
