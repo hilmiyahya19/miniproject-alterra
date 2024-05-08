@@ -59,7 +59,7 @@ function Update() {
         });
         setSelectedContent(null);
         // Reload the page
-        window.location.reload();
+        // window.location.reload();
         } catch (error) {
             console.error("Error updating content:", error.message);
         }
