@@ -22,7 +22,7 @@ import Create from "./pages/PrivatePage/Create";
 import Detail from "./pages/PublicPage/movie/Detail";
 import Update from "./pages/PrivatePage/Update";
 import Delete from "./pages/PrivatePage/Delete";
-import CreateVideo from "./pages/PrivatePage/CreateVideo";
+import UploadVideo from "./pages/PrivatePage/UploadVideo";
 
 function App() {
   // Cek apakah pengguna sudah terautentikasi
@@ -59,7 +59,7 @@ function App() {
               <Route path="/update" element={<Update/>} />
               <Route path="/delete" element={<Delete/>} />
               <Route path="/logout" element={<Logout/>} />
-              <Route path="/create-video" element={<CreateVideo/>} />
+              <Route path="/upload-video" element={<UploadVideo/>} />
             </Route>
           {/* Not found */}
           <Route path="*" element={<NotFound />} />

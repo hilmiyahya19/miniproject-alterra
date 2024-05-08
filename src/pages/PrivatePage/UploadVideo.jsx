@@ -1,13 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
-import { Card, Container, Heading, VStack, Input, Text } from "@chakra-ui/react";
+import { Card, Container, Heading, VStack, Text } from "@chakra-ui/react";
 
 const supabase = createClient("https://lbhlhyseyqpnhwjmhugh.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxiaGxoeXNleXFwbmh3am1odWdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzQ5OTMsImV4cCI6MjAzMDc1MDk5M30.0LDbAFDSPlSZT6SSxgbrsvtU0IIGJZscZMlyZznbpwg");
 
 const CDNURL = "https://lbhlhyseyqpnhwjmhugh.supabase.co/storage/v1/object/public/videos/";
 
-function CreateVideo() {
+function UploadVideo() {
     const [videos, setVideos] = useState([]);
     const [uploading, setUploading] = useState(false);
 
@@ -45,11 +45,12 @@ function CreateVideo() {
     }
 
     return (
-        <VStack spacing={4} alignItems="center" pt={10}>
+        <VStack spacing={4} alignItems="center" mt={10}>
             <Heading size="xl">Upload Video</Heading>
-            <Input type="file" accept="video/mp4" onChange={(e) => uploadFile(e)} />
+            <input type="file" className="file-input file-input-bordered w-full max-w-xs"
+            accept="video/mp4" onChange={(e) => uploadFile(e)}/>
             {uploading && <Text>Uploading...</Text>}
-            <Container maxW="xl" centerContent>
+            <Container maxW="xl" centerContent mb={10}>
                 {videos.map((video, index) => (
                     <Card key={index} p={4} maxW="xl" boxShadow="lg">
                         <video controls width="100%">
@@ -62,4 +63,4 @@ function CreateVideo() {
     );
 }
 
-export default CreateVideo;
+export default UploadVideo;

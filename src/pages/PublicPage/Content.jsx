@@ -30,7 +30,7 @@ function Content() {
             <p className="text-pink-700 text-lg font-semibold">Title : {item.title}</p>
             <p className="text-gray-600 text-md">Description : {item.description}</p>
             <div className="pt-2">
-              <video className="h-full w-full rounded-lg" controls autoPlay>
+              <video className="h-full w-full rounded-lg" controls>
                 <source src={item.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
