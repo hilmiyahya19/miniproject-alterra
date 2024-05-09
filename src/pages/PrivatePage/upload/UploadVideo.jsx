@@ -21,7 +21,13 @@ function UploadVideo() {
             console.log(error);
             alert("Error grabbing file from Supabase");
         } else {
-            setVideos(data || []);
+            if (data && data.length > 0) {
+                // Memfilter hanya file video
+                const filteredVideos = data.filter(video => video.name.endsWith('.mp4'));
+                setVideos(filteredVideos);
+            } else {
+                setVideos([]);
+            }
         }
     }
 
