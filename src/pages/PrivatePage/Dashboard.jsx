@@ -20,7 +20,7 @@ function Dashboard() {
       </div>
       <div className="container mx-auto py-10 px-4 mt-10 mb-10 shadow-lg bg-slate-100 rounded-lg">
         <Text className="font-semibold text-2xl text-center mb-6">
-          Upload your video or image files locally here
+          Upload images or videos from your local files to be used as image or video URL links
         </Text>
         <Flex justifyContent="center" gap={8}>
           <div>

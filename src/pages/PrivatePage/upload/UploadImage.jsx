@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
 import { Card, Container, Heading, VStack, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const supabase = createClient("https://lbhlhyseyqpnhwjmhugh.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxiaGxoeXNleXFwbmh3am1odWdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzQ5OTMsImV4cCI6MjAzMDc1MDk5M30.0LDbAFDSPlSZT6SSxgbrsvtU0IIGJZscZMlyZznbpwg");
 
@@ -57,11 +58,15 @@ function UploadImage() {
       <input type="file" className="file-input file-input-bordered w-full max-w-xs"
       accept="image/*" onChange={(e) => uploadFile(e)}/>
       {uploading && <Text>Uploading...</Text>}
+       {/* Tampilkan link URL dari gambar */}
       <Container maxW="xl" centerContent mb={10}>
         {images.map((image, index) => (
-          <Card key={index} p={5} maxW="xl" boxShadow="lg">
-            <img src={CDNURL + image.name} alt={image.name} style={{ maxWidth: "100%" }} /> {/* Menampilkan gambar */}
-          </Card>
+        <Card key={index} p={5} maxW="xl" boxShadow="lg">
+          <Text mb={2}><span className="font-semibold text-lg">Link URL Gambar : </span>
+              <Link to={CDNURL + image.name} target="_blank">{CDNURL + image.name}</Link>
+          </Text> {/* Menggunakan Link dari react-router-dom */}
+          <img src={CDNURL + image.name} alt={image.name} style={{ maxWidth: "100%" }} /> {/* Menampilkan gambar */}
+        </Card>
         ))}
       </Container>
     </VStack>
