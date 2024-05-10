@@ -22,7 +22,7 @@ function Logout() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center my-10">
       <h1 className="text-4xl font-semibold mb-8">Logout</h1>
       <img src={Illustration} alt="Logout Illustration" className="w-64 mb-8" />
       <Button onClick={handleShowModal} className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-md shadow-md transition duration-300 ease-in-out">
