@@ -11,6 +11,7 @@ const CDNURL = "https://lbhlhyseyqpnhwjmhugh.supabase.co/storage/v1/object/publi
 function UploadVideo() {
     const [videos, setVideos] = useState([]);
     const [uploading, setUploading] = useState(false);
+    const [fileInputKey, setFileInputKey] = useState(""); // memperbarui elemen input file dan membersihkan nilai file yang telah diupload
 
     async function getVideos() {
         const { data, error } = await supabase
@@ -47,7 +48,8 @@ function UploadVideo() {
             alert("Error uploading file to Supabase");
         } else {
             alert("Video uploaded successfully!");
-            getVideos();
+            setFileInputKey(uuidv4()); 
+            getVideos(); // Mengambil ulang daftar video setelah unggah berhasil
         }
         setUploading(false);
     }
@@ -55,7 +57,7 @@ function UploadVideo() {
     return (
         <VStack spacing={4} alignItems="center" mt={10}>
             <Heading size="xl">Upload Video</Heading>
-            <input type="file" className="file-input file-input-bordered w-full max-w-xs"
+            <input key={fileInputKey} type="file" className="file-input file-input-bordered w-full max-w-xs"
             accept="video/mp4" onChange={(e) => uploadFile(e)}/>
             {uploading && <Text>Uploading...</Text>}
             {/* Tampilkan link URL dari video */}
@@ -63,10 +65,11 @@ function UploadVideo() {
                 {videos.map((video, index) => (
                 <Card key={index} p={4} maxW="xl" boxShadow="lg">
                     <Text mb={2}><span className="font-semibold text-lg">Link URL Gambar : </span>
-                        <Link to={CDNURL + video.name} target="_blank" rel="noopener noreferrer">{CDNURL + video.name}</Link>
+                        <Link to={CDNURL + video.name} target="_blank" rel="noopener noreferrer">{CDNURL + video.name}
+                        </Link>
                     </Text>
                     <video controls width="100%">
-                      <source src={CDNURL + video.name} type="video/mp4" />
+                      <source src={CDNURL + video.name} type="video/mp4" />  {/* Menampilkan video */}
                     </video>
                 </Card>
                 ))}

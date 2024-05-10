@@ -11,6 +11,7 @@ const CDNURL = "https://lbhlhyseyqpnhwjmhugh.supabase.co/storage/v1/object/publi
 function UploadImage() {
   const [images, setImages] = useState([]);
   const [uploading, setUploading] = useState(false);
+  const [fileInputKey, setFileInputKey] = useState(""); // memperbarui elemen input file dan membersihkan nilai file yang telah diupload
 
  async function getImages() {
     const { data, error } = await supabase
@@ -47,6 +48,7 @@ function UploadImage() {
       alert("Error uploading file to Supabase");
     } else {
       alert("Image uploaded successfully!");
+      setFileInputKey(uuidv4()); 
       getImages(); // Mengambil ulang daftar gambar setelah unggah berhasil
     }
     setUploading(false);
@@ -55,7 +57,7 @@ function UploadImage() {
   return (
     <VStack spacing={4} alignItems="center" mt={10}>
       <Heading size="xl">Upload Image</Heading>
-      <input type="file" className="file-input file-input-bordered w-full max-w-xs"
+      <input key={fileInputKey} type="file" className="file-input file-input-bordered w-full max-w-xs"
       accept="image/*" onChange={(e) => uploadFile(e)}/>
       {uploading && <Text>Uploading...</Text>}
        {/* Tampilkan link URL dari gambar */}
@@ -64,7 +66,7 @@ function UploadImage() {
         <Card key={index} p={5} maxW="xl" boxShadow="lg">
           <Text mb={2}><span className="font-semibold text-lg">Link URL Gambar : </span>
               <Link to={CDNURL + image.name} target="_blank">{CDNURL + image.name}</Link>
-          </Text> {/* Menggunakan Link dari react-router-dom */}
+          </Text>
           <img src={CDNURL + image.name} alt={image.name} style={{ maxWidth: "100%" }} /> {/* Menampilkan gambar */}
         </Card>
         ))}
