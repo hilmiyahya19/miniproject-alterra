@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL_2, import.meta.env.VITE_SUPABASE_KEY_2);
 
-const CDNURL = `${import.meta.env.VITE_SUPABASE_URL_2}/storage/v1/object/public/images/`;
+const CDNURL = `${import.meta.env.VITE_SUPABASE_URL_2}/storage/v1/object/public/videos/`;
 
 function UploadVideo() {
     const [videos, setVideos] = useState([]);
