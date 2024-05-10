@@ -46,6 +46,7 @@ function UploadVideo() {
             console.log(error);
             alert("Error uploading file to Supabase");
         } else {
+            alert("Video uploaded successfully!");
             getVideos();
         }
         setUploading(false);
