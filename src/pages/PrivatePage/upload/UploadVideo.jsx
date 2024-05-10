@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { Card, Container, Heading, VStack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const supabase = createClient("https://lbhlhyseyqpnhwjmhugh.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxiaGxoeXNleXFwbmh3am1odWdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzQ5OTMsImV4cCI6MjAzMDc1MDk5M30.0LDbAFDSPlSZT6SSxgbrsvtU0IIGJZscZMlyZznbpwg");
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL_2, import.meta.env.VITE_SUPABASE_KEY_2);
 
-const CDNURL = "https://lbhlhyseyqpnhwjmhugh.supabase.co/storage/v1/object/public/videos/";
+const CDNURL = `${import.meta.env.VITE_SUPABASE_URL_2}/storage/v1/object/public/images/`;
 
 function UploadVideo() {
     const [videos, setVideos] = useState([]);
