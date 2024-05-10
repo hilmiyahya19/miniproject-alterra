@@ -1,7 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
-import { Card, Container, Heading, VStack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL_2, import.meta.env.VITE_SUPABASE_KEY_2);
@@ -55,26 +54,23 @@ function UploadVideo() {
     }
 
     return (
-        <VStack spacing={4} alignItems="center" mt={10}>
-            <Heading size="xl">Upload Video</Heading>
-            <input key={fileInputKey} type="file" className="file-input file-input-bordered w-full max-w-xs"
-            accept="video/mp4" onChange={(e) => uploadFile(e)}/>
-            {uploading && <Text>Uploading...</Text>}
-            {/* Tampilkan link URL dari video */}
-            <Container maxW="xl" centerContent mb={10}>
-                {videos.map((video, index) => (
-                <Card key={index} p={4} maxW="xl" boxShadow="lg">
-                    <Text mb={2}><span className="font-semibold text-lg">Link URL Gambar : </span>
-                        <Link to={CDNURL + video.name} target="_blank" rel="noopener noreferrer">{CDNURL + video.name}
-                        </Link>
-                    </Text>
-                    <video controls width="100%">
-                      <source src={CDNURL + video.name} type="video/mp4" />  {/* Menampilkan video */}
-                    </video>
-                </Card>
-                ))}
-            </Container>
-        </VStack>
+        <div className="flex flex-col items-center mt-10">
+        <h1 className="text-2xl font-bold mb-4">Upload Video</h1>
+        <input key={fileInputKey} type="file" className="file-input file-input-bordered w-full max-w-xs"
+        accept="video/mp4" onChange={(e) => uploadFile(e)}/>
+        {uploading && <p>Uploading...</p>}
+        <div className="container mx-auto p-2 mt-6">
+          {videos.map((video, index) => (
+            <div key={index} className="max-w-xl mx-auto mb-8 shadow-lg p-2 rounded-xl">
+                <div className="text-lg font-semibold mb-2">Link URL Video :</div>
+                <Link to={CDNURL + video.name} target="_blank" className="text-blue-500">{CDNURL + video.name}</Link>
+                <video controls width="100%" className="block w-full mt-4 p-2">
+                    <source src={CDNURL + video.name} type="video/mp4" />  
+                </video>
+            </div>
+          ))}
+        </div>
+      </div>
     );
 }
 

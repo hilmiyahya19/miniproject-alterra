@@ -1,7 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
-import { Card, Container, Heading, VStack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL_2, import.meta.env.VITE_SUPABASE_KEY_2);
@@ -55,23 +54,21 @@ function UploadImage() {
   }
 
   return (
-    <VStack spacing={4} alignItems="center" mt={10}>
-      <Heading size="xl">Upload Image</Heading>
+    <div className="flex flex-col items-center mt-10">
+      <h1 className="text-2xl font-bold mb-4">Upload Image</h1>
       <input key={fileInputKey} type="file" className="file-input file-input-bordered w-full max-w-xs"
       accept="image/*" onChange={(e) => uploadFile(e)}/>
-      {uploading && <Text>Uploading...</Text>}
-       {/* Tampilkan link URL dari gambar */}
-      <Container maxW="xl" centerContent mb={10}>
+      {uploading && <p>Uploading...</p>}
+      <div className="container mx-auto p-2 mt-6">
         {images.map((image, index) => (
-        <Card key={index} p={5} maxW="xl" boxShadow="lg">
-          <Text mb={2}><span className="font-semibold text-lg">Link URL Gambar : </span>
-              <Link to={CDNURL + image.name} target="_blank">{CDNURL + image.name}</Link>
-          </Text>
-          <img src={CDNURL + image.name} alt={image.name} style={{ maxWidth: "100%" }} /> {/* Menampilkan gambar */}
-        </Card>
+          <div key={index} className="max-w-xl mx-auto mb-8 shadow-lg p-2 rounded-xl">
+            <div className="text-lg font-semibold mb-2">Link URL Gambar :</div>
+            <Link to={CDNURL + image.name} target="_blank" className="text-blue-500">{CDNURL + image.name}</Link>
+            <img src={CDNURL + image.name} alt={image.name} className="block w-full mt-4 p-2" />
+          </div>
         ))}
-      </Container>
-    </VStack>
+      </div>
+    </div>
   );
 }
 
