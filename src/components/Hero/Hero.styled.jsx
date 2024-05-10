@@ -35,7 +35,7 @@ const StyledHero = styled.div`
     max-width: 100%;
     height: auto;
     border-radius: 25px;
-    padding-top: 1rem;
+    padding: 1rem;
     margin: 0 auto; /* Gambar berada di tengah pada semua layar */
     display: block; /* Mengatasi margin auto agar berfungsi */
   }
