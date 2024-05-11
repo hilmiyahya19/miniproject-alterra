@@ -28,7 +28,7 @@ function Footer() {
         <div className="mb-8 md:mb-0">
           <img src={`/img/icons8-movie-64.png`} alt="movie" 
           className="mr-2 w-8 md:w-12 lg:w-20 h-8 md:h-12 lg:h-20"/>
-          <h2 className="text-white text-lg mt-2">Movie App</h2>
+          <h2 className="text-white text-lg mt-2">SkyMovie</h2>
         </div>
         {/* Column 3 */}
         <div>

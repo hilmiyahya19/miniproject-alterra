@@ -36,7 +36,7 @@ function Navbar() {
         <div className="mx-2 sm:mx-5 md:mx-5 lg:mx-5">
           <div className="container mx-auto flex justify-between items-center py-5">
             <div className="header-left">
-              <h1 className='text-3xl text-blue-600 font-semibold'>Movie App</h1>
+              <h1 className='text-3xl text-blue-600 font-semibold'>SkyMovie</h1>
             </div>
             <div className="header-right md:text-center text-blue-600 mx-3 text-xl">
               <nav>
