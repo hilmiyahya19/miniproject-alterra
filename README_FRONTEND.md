@@ -2,7 +2,7 @@
 SkyMovie
 
 ## About Project
-webiste movie
+website movie
 
 ## Features
 sebutkan fitur-fitur yang ada di project yang dibuat :
