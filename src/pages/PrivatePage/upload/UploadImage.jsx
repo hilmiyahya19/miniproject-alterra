@@ -58,7 +58,7 @@ function UploadImage() {
       <h1 className="text-2xl font-bold mb-4">Upload Image</h1>
       <input key={fileInputKey} type="file" className="file-input file-input-bordered w-full max-w-xs"
       accept="image/*" onChange={(e) => uploadFile(e)}/>
-      {uploading && <p>Uploading...</p>}
+      {uploading && <p className="pt-4">Uploading...</p>}
       <div className="container mx-auto p-2 mt-6">
         {images.map((image, index) => (
           <div key={index} className="max-w-xl mx-auto mb-8 shadow-lg p-2 rounded-xl">
