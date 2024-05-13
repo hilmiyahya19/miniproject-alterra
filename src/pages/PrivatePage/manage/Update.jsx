@@ -82,7 +82,7 @@ function Update() {
       </div>
       {selectedContent && (
         <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4">Update Content</h2>
+          <h2 className="text-xl font-semibold mb-4 text-center">Update Content</h2>
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <div className="mb-4">
               <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">Title</label>
