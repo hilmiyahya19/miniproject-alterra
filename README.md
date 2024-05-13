@@ -2,7 +2,7 @@
 SkyMovie
 
 ## About Project
-SkyMovie, sebuah webiste film interaktif, menyediakan pengalaman menonton yang menyeluruh dengan fitur-fitur seperti rekomendasi, cuplikan, dan kontrol konten pengguna.
+SkyMovie, sebuah website film interaktif, menyediakan pengalaman menonton yang menyeluruh dengan fitur-fitur seperti rekomendasi, cuplikan, dan kontrol konten pengguna.
 
 ## Features
 sebutkan fitur-fitur yang ada di project yang dibuat :
