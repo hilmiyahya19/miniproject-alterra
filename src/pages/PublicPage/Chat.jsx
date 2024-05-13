@@ -31,9 +31,11 @@ function Chat() {
     e.preventDefault();
     setIsLoading(true);
 
+    // Pesan awal yang akan dikirimkan ke CineBot
     const promptAwal =
       'kamu adalah CineBot, CineBot adalah asisten pribadi user(pemberi pertanyaan) dalam dunia film!, user Cukup memberi tahu kamu  genre, negara asal, atau judul film yang user sukai, dan kamu akan memberikan rekomendasi yang sesuai dengan preferensi user';
 
+    // Struktur body request untuk mengirim pertanyaan ke OpenAI API
     const APIBody = {
       model: 'gpt-4',
       messages: [
@@ -51,20 +53,20 @@ function Chat() {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + API_KEY
         },
-        body: JSON.stringify(APIBody)
+        body: JSON.stringify(APIBody) // Mengirim data dalam format JSON
       });
 
       if (!response.ok) {
         throw new Error('Failed to fetch');
       }
 
-      const data = await response.json();
+      const data = await response.json(); // Mengambil data JSON dari respons
       console.log(data);
-      setRespond(data.choices[0].message.content);
+      setRespond(data.choices[0].message.content); // Menyimpan jawaban dari CineBot
     } catch (error) {
       console.error('Error:', error);
     } finally {
-      setIsLoading(false);
+      setIsLoading(false); // Menghentikan animasi loading setelah selesai
     }
   };
 
