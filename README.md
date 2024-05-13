@@ -40,7 +40,7 @@ https://sky-movie.vercel.app/
 clone repositori
  ```bash
 git clone <URL_REPO>
-    cd <NAMA_FOLDER_PROYEK>
+cd <NAMA_FOLDER_PROYEK>
 ```
 instalasi dependencies
 ```bash
