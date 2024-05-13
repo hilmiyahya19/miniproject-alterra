@@ -39,7 +39,7 @@ function Footer() {
           <p className="text-white mb-2">Email: hilmiyahya825@gmail.com</p>
           <div className="font-bold text-white">
             <Link to="/contact">
-              <button className="btn-primary px-5 py-2 bg-blue-900 rounded-md hover:bg-blue-800">Contact</button>
+              <button className="btn-primary px-5 py-2 bg-blue-800 rounded-md hover:bg-blue-900">Contact</button>
             </Link>
           </div>
         </div>

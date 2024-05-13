@@ -31,6 +31,8 @@ function Hero() {
     const response = await axios(ENDPOINTS.DETAIL(id));
 
     setMovie(response.data);
+
+    console.log(response.data);
   }
 
   return (

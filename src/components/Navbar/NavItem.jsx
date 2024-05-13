@@ -7,7 +7,7 @@ function NavItem({ to, children, currentPath }) {
   return (
     <li>
       <Link
-        className={`font-semibold ${isActive ? 'text-white bg-blue-500 px-2 py-1 rounded' : ''}`}
+        className={`font-semibold ${isActive ? 'text-white bg-blue-800 px-2 py-1 rounded' : ''}`}
         to={to}
       >
         {children}

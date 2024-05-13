@@ -18,6 +18,7 @@ function Popular () {
             // Fetch data dari axios
             const response = await axios(ENDPOINTS.POPULAR);
             dispatch(updateMovies(response.data.results));
+            console.log(response.data);
     }
     return (
         <>
