@@ -27,7 +27,7 @@ sebutkan fitur-fitur yang ada di project yang dibuat :
 - upload local images and videos to be used as URL links
 
 ## Tech Stacks
-Tools yang digunakan:
+Tools yang digunakan :
 visual studio code, git bash, github, node, vercel
 
 Library dan dependencies yang digunakan :
