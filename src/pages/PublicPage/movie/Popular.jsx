@@ -8,6 +8,7 @@ import Hero from "../../../components/Hero/Hero"
 
 function Popular () {
     //membuat dispatch
+    // untuk menjalankan action, kita harus trigger menggunakan dispatch
     const dispatch = useDispatch() 
 
     useEffect(() => {

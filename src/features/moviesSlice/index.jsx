@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import dataMovie from "../../utils/constants/dataMovie";
 
-// import createSlice
 const moviesSlice = createSlice({
     name: "Movies Slice",
     initialState: {
         movies:dataMovie,
     },
     reducers: {
-        addMovie(state, action) {
-            state.movies.push(action.payload);
-        },
-        deleteMovie(){},
+         /**
+         * action punya akses ke state movies dan digunakan untuk mengambil data yang dikirimkan lewat reducer
+         * state.movies ditimpa nilai nya dengan data yang dikirimkan nanti ketika mengambil reducer
+         * misal mengirim movies popular, movies popular masuk ke action.payload kemudian menimpa state.movies
+         * otomatis nilai dari movies bukan dari local, tapi dari api
+         */
         updateMovies(state, action){
             state.movies = action.payload;
         },
@@ -19,8 +20,8 @@ const moviesSlice = createSlice({
 });
 
 // generate action dan reducers
-const { addMovie, deleteMovie , updateMovies} = moviesSlice.actions;
+const { updateMovies } = moviesSlice.actions;
 const moviesReducer = moviesSlice.reducer;
 
-export {addMovie, deleteMovie, updateMovies};
+export { updateMovies };
 export default moviesReducer;

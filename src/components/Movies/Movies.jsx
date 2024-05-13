@@ -7,7 +7,10 @@ function Movies(props) {
   // Destructing props: state movies
   const { title} = props;
 
+  // nama ((store) =>) terserah
+  // store.reducer.state (reducer dari store, state dari moviesSlice)
   const movies = useSelector((store) => store.movies.movies);
+  console.log(movies);
 
   return (
     <div>

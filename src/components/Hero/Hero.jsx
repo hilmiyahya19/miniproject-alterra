@@ -8,6 +8,7 @@ import ENDPOINTS from "../../utils/constants/endpoint";
 function Hero() {
   // Membuat state movie
   const [movie, setMovie]= useState("");
+  // join(", ") join untuk menggabungkan array menjadi string, setiap elemen dipisahkan berdasarkan koma dan spasi
   const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
   const trailer = movie && `https://www.youtube.com/watch?v=${movie.videos.results[0].key}`;  
 
