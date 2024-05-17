@@ -22,7 +22,7 @@ sebutkan fitur-fitur yang ada di project yang dibuat :
 - display content
 - ask cinebot anything about movie
 
-### Admin
+### User yang telah login
 - create, update, delete content
 - upload local images and videos to be used as URL links
 
